@@ -1,15 +1,29 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>index</title></head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>index</title>
+</head>
 
-  <frameset cols="20%, *">
+<frameset cols="20%, *">
   <frameset rows="10%, 80%, *">
-<frame src="encabezado de index.html">
-<frame src="Izquierda.html">
-<frame src="datos de index.html"></frameset>
+    <frame src="encabezado_de_index.html">
+    <frame src="Izquierda.html">
+    <frame src="datos_de_index.html">
+  </frameset>
 
-<frameset cols="80%">
-<img src="Images/mi video.mp4" name="central">
-    </frameset>
-      
+  <frameset cols="80%">
+    <frame src="about:blank" name="central">
+  </frameset>
+</frameset>
 
+<script>
+window.addEventListener('load', function() {
+  var videoFrame = parent.frames['central'];
+  videoFrame.document.open();
+  videoFrame.document.write('<video controls src="Images/mi_video.mp4"></video>');
+  videoFrame.document.close();
+});
+</script>
 
 </html>
